@@ -28,16 +28,7 @@ function render(variables = {}) {
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
-  if (variables.name == null || variables.name == "")
-    variables.name = "Your name";
-  if (variables.lastname == null || variables.lastname == "")
-    variables.lastname = "Your lastName";
-  if (variables.role == null || variables.role == "")
-    variables.role = "Your role";
-  if (variables.city == null || variables.city == "")
-    variables.city = "Your city";
-  if (variables.country == null || variables.city == "")
-    variables.country = "Your country";
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
@@ -73,11 +64,11 @@ window.onload = function() {
     github: "alesanchezr",
     linkedin: null,
     instagram: null,
-    name: null,
-    lastname: null,
-    role: null,
-    country: null,
-    city: null
+    name: "Fabián",
+    lastname: "Chacón",
+    role: "Estudiante",
+    country: "Country",
+    city: "city"
   };
   render(window.variables); //render the card for the first time
 
